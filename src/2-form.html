@@ -9,9 +9,31 @@
   </head>
   <body>
     <section>
-      <a href="./index.html">Go to home</a>
+      <a href="./index.html">Form</a>
       <h1>Welcome to page 3</h1>
     </section>
+    <form class="feedback-form">
+      <label class="label-input">
+        Email
+        <input
+          id="emailInput"
+          type="email"
+          name="email"
+          autofocus
+          placeholder="Enter your email..."
+        />
+      </label>
+      <label class="label-input textarea-label">
+        Message
+        <textarea
+          id="textareaMsg"
+          name="message"
+          rows="8"
+          placeholder="Enter your message..."
+        ></textarea>
+      </label>
+      <button class="form-btn" type="submit">Submit</button>
+    </form>
     <script type="module" src="./js/2-form.js"></script>
   </body>
 </html>

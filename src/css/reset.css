@@ -24,7 +24,8 @@ a {
   text-decoration: none;
 }
 
-button {
+button,
+label {
   cursor: pointer;
 }
 
@@ -32,4 +33,32 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+
+  line-height: 1.5;
+  color: #2e2f42;
+
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+input {
+  font: inherit;
+  width: 360px;
+}
+
+textarea {
+  width: 360px;
 }
