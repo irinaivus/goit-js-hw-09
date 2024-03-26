@@ -1,2 +1,2 @@
-import"./assets/styles-3c4e11fa.js";console.log("Form");
+import"./assets/styles-1962d0c2.js";const n="feedback-form-state",o=document.querySelector(".feedback-form"),t=document.querySelector("#textareaMsg"),a=document.querySelector("#emailInput");o.addEventListener("submit",m);t.addEventListener("input",r);a.addEventListener("input",r);function l(){const e=JSON.parse(localStorage.getItem(n))||{};a.value=e.email??"",t.value=e.message??""}l();function r(e){e.preventDefault();const u={email:a.value.trim(),message:t.value.trim()};localStorage.setItem(n,JSON.stringify(u))}function m(e){e.preventDefault(),!(!t.value||!a.value)&&(console.log("send"),localStorage.removeItem(n),o.reset())}
 //# sourceMappingURL=commonHelpers2.js.map
