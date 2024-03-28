@@ -1,7 +1,7 @@
 const STORAGE_KEY = 'feedback-form-state';
 const form = document.querySelector('.feedback-form');
-const textarea = document.querySelector('#textareaMsg');
-const emailInput = document.querySelector('#emailInput');
+const textarea = form.querySelector('#textareaInput');
+const emailInput = form.querySelector('#emailInput');
 
 form.addEventListener('submit', onSubmit);
 textarea.addEventListener('input', onTextareaInput);
@@ -15,7 +15,6 @@ function updateFormFields() {
 updateFormFields();
 
 function onTextareaInput(event) {
-  event.preventDefault();
   const formData = {
     email: emailInput.value.trim(),
     message: textarea.value.trim(),
@@ -25,12 +24,14 @@ function onTextareaInput(event) {
 
 function onSubmit(event) {
   event.preventDefault();
-
-  if (!textarea.value || !emailInput.value) {
+  const formData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+  if (textarea.value.trim() === '' || emailInput.value.trim() === '') {
     return;
   }
-  console.log('send');
+  if (formData.email && formData.message) {
+    console.log(formData);
 
-  localStorage.removeItem(STORAGE_KEY);
-  form.reset();
+    localStorage.removeItem(STORAGE_KEY);
+    form.reset();
+  }
 }
